@@ -3,9 +3,10 @@ body{
     color: white;
     font-family: poppinsregular;
     max-width: 1200px;  
-    margin: 0 auto; /* Remove qualquer margem padrão */
-    padding: 10; /* Remove qualquer preenchimento */
-    height: 100vh; /* Define a altura da página como 100% da altura da tela */
+    margin: 0 auto; 
+    padding: 10; 
+    height: 100vh; 
+    overflow: auto;
     
 }
 
@@ -13,11 +14,11 @@ body{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Centraliza a imagem */
-    opacity: 0.1; /* Opacidade da marca d'água */
-    pointer-events: none; /* Impede que a imagem interfira nas interações com o conteúdo */
-    z-index: -1; /* Coloca a imagem atrás do conteúdo */
-    max-width: 50%; /* Define um tamanho máximo para a imagem (pode ajustar conforme necessário) */
+    transform: translate(-50%, -50%); 
+    opacity: 0.1; 
+    pointer-events: none; 
+    z-index: -1; 
+    max-width: 50%; 
 }
 
 header{
