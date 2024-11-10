@@ -5,11 +5,14 @@
     main{
         flex-direction: column;
     }
+    aside{
+        flex-direction: column;
+    }   
+        
     h2{
         font-size: 38px;
         flex-direction: column;
-    } 
-
+    }
     form{
         margin: 0 auto;
         width: 100%;

@@ -3,8 +3,21 @@ body{
     color: white;
     font-family: poppinsregular;
     max-width: 1200px;  
-    margin: 0 auto;
-    padding: 10px;  
+    margin: 0 auto; /* Remove qualquer margem padrão */
+    padding: 10; /* Remove qualquer preenchimento */
+    height: 100vh; /* Define a altura da página como 100% da altura da tela */
+    overflow: hidden; 
+}
+
+.watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza a imagem */
+    opacity: 0.1; /* Opacidade da marca d'água */
+    pointer-events: none; /* Impede que a imagem interfira nas interações com o conteúdo */
+    z-index: -1; /* Coloca a imagem atrás do conteúdo */
+    max-width: 50%; /* Define um tamanho máximo para a imagem (pode ajustar conforme necessário) */
 }
 
 header{
@@ -13,7 +26,7 @@ header{
     justify-content: space-between;
     align-items: center;
 }
-#title{
+.title{
     flex-direction: column;
     line-height: 10px;
 }
@@ -96,6 +109,7 @@ input{
 
 }
 footer{
+    padding: 30px 5px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
