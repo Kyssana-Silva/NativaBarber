@@ -9,7 +9,7 @@ function saveUser(username, password) {
     users.push(newUser);
     localStorage.setItem('users', JSON.stringify(users));
     alert('Usuário registrado com sucesso!');
-    window.location.href = 'login.html'; // Redireciona para a página de login após o registro
+    window.location.href = 'index.html'; // Redireciona para a página de login após o registro
 }
 
 // envio do formulário de registro (registro.html)
