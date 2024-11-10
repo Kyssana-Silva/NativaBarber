@@ -6,7 +6,7 @@ body{
     margin: 0 auto; /* Remove qualquer margem padrão */
     padding: 10; /* Remove qualquer preenchimento */
     height: 100vh; /* Define a altura da página como 100% da altura da tela */
-    overflow: hidden; 
+    
 }
 
 .watermark {
