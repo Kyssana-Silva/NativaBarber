@@ -7,6 +7,10 @@ body{
     padding: 10; 
     height: 100vh; 
     overflow: auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;         
+    margin: 0;
     
 }
 
@@ -117,12 +121,18 @@ input{
     font-size: 15px;
 
 }
-footer{
-    align-self: center;
-    padding: 30px 5px;
+footer {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-color: (132,14,201);
+    justify-content: center;   
+    align-items: center;       
+    position: fixed;           
+    bottom: 0;                 
+    left: 0;
+    width: 100%;               
+    background-color: rgb(132,14,201); 
+    color: white;              
+    padding: 10px 0;           
+    font-size: 14px;           
+    text-align: center;        
+                  
 }

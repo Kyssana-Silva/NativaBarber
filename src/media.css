@@ -1,33 +1,51 @@
-@media screen and (max-width: 760px){
-    header{
+/* Estilos para tela menor que 760px */
+@media screen and (max-width: 760px) {
+    header {
         flex-direction: column;
+        align-self: center;
+        align-items: center;
+        text-align: center;
     }
-    main{
+
+    main {
         flex-direction: column;
+        padding-bottom: 60px; 
     }
-    aside{
+
+    aside {
         flex-direction: column;
-    }   
-        
-    h2{
+        padding-left: 15px;
+    }
+
+    h2 {
         font-size: 38px;
         flex-direction: column;
     }
-    form{
+
+    form {
         margin: 0 auto;
         width: 100%;
     }
-    input{
+
+    input {
         align-self: center;
     }
-    img{
-       display:none;
+
+    img {
+        display: none;
     }
-    ul{
+
+    ul {
         text-align: center;
     }
-    footer{
-        flex-direction: column;
-   }
 
+    footer {
+        flex-direction: column;
+        position: relative; 
+        width: 100%; 
+        padding: 10px 0; 
+        background-color: rgb(132,14,201);; 
+        color: white;
+        text-align: center; 
+    }
 }
