@@ -27,10 +27,18 @@ header{
     justify-content: space-between;
     align-items: center;
 }
+
+nav{
+    display: inline;
+    align-items: center;
+    
+}
 .title{
     flex-direction: column;
     line-height: 10px;
 }
+
+
 li{
     display: inline-block;
     margin: 20px;
@@ -110,9 +118,11 @@ input{
 
 }
 footer{
+    align-self: center;
     padding: 30px 5px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    background-color: (132,14,201);
 }

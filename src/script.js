@@ -1,23 +1,37 @@
-// ==========================================
-// PÁGINA DE REGISTRO
-// ==========================================
-
-// Função para salvar um novo usuário 
-function saveUser(username, password) {
+// Função para salvar um novo usuário
+function saveUser(username, email, password) {
     const users = JSON.parse(localStorage.getItem('users')) || [];
-    const newUser = { username, password };
+    const newUser = { username, email, password };
     users.push(newUser);
     localStorage.setItem('users', JSON.stringify(users));
     alert('Usuário registrado com sucesso!');
     window.location.href = 'index.html'; // Redireciona para a página de login após o registro
 }
 
-// envio do formulário de registro (registro.html)
+// Envio do formulário de registro
 document.getElementById('register-form')?.addEventListener('submit', function(e) {
     e.preventDefault(); // Evita o envio padrão do formulário
+
     const username = document.getElementById('register-login').value;
+    const email = document.getElementById('register-email').value;
     const password = document.getElementById('register-password').value;
-    saveUser(username, password); // Chama a função de salvar usuário
+    const confirmPassword = document.getElementById('register-confirm-password').value;
+
+    // Validação do campo de e-mail
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailPattern.test(email)) {
+        alert('Por favor, insira um e-mail válido.');
+        return;
+    }
+
+    // Validação da confirmação de senha
+    if (password !== confirmPassword) {
+        alert('As senhas não coincidem. Por favor, tente novamente.');
+        return;
+    }
+
+    // Salva o usuário caso tudo esteja correto
+    saveUser(username, email, password);
 });
 
 // ==========================================
