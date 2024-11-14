@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NativaBarber</title>
+    
+    <!-- Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <style>
+        /* Estilo geral do body com imagem de fundo */
+        body {
+            background-color: #1a1a1a;
+            background-image: url('cranio-de-barbeiro-barbudo-e-bigode (1).png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-blend-mode: overlay;
+            color: white;
+        }
+
+        /* Estilo do header */
+        .header {
+            background-color: rgba(46, 30, 46, 0.9);
+            padding: 10px;
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #brand-name {
+            color: #ddbbee;
+        }
+
+        /* Card Custom Styles */
+        .card-custom {
+            background-color: rgba(58, 40, 58, 0.9);
+            color: #ddbbee;
+            border-radius: 8px;
+        }
+
+        /* Botões personalizados */
+        .button {
+            background-color: #8b3e8b;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            transition: background-color 0.3s, transform 0.3s;
+            cursor: pointer;
+            padding: 15px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .button:hover {
+            background-color: #a04aa0;
+            transform: scale(1.05);
+        }
+
+        /* Botões no grid de ações */
+        #button-grid .button {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            text-align: center;
+        }
+
+        /* Move grid de botões para mais baixo */
+        #button-grid {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div id="brand-name">
+            <h1>NativaBarber</h1>
+            <h2>Gerencie seu Negócio</h2>
+        </div>
+        <nav>
+            <ul class="d-flex list-unstyled">
+                <a href="#" class="text-white text-decoration-none me-3"><li>Início</li></a>
+                <a href="#" class="text-white text-decoration-none me-3"><li>Sobre</li></a>
+                <a href="#" class="text-white text-decoration-none me-3"><li>Contato</li></a>
+                <a href="register.html" class="text-white text-decoration-none"><li>Crie sua conta</li></a>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container my-4">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card card-custom p-3" id="today-schedule">
+                    <h3>Hoje, 29 de set.</h3>
+                    <div>
+                        <p><strong>10:30 - 11:30</strong><br>Carlos Augusto<br><small>Corte de cabelo</small><span class="float-end">R$50,00</span></p>
+                        <hr>
+                        <p><strong>13:45 - 14:45</strong><br>Carlos Augusto<br><small>Corte de cabelo</small><span class="float-end">R$50,00</span></p>
+                        <hr>
+                        <p><strong>15:00 - 16:00</strong><br>Carlos Augusto<br><small>Corte de cabelo</small><span class="float-end">R$50,00</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card card-custom p-3" id="attendance-graph">
+                    <h3>Gráfico de Atendimentos</h3>
+                    <p>Período: 31 ago, 2024 - 28 set, 2024</p>
+                    <canvas id="attendanceChart" style="max-height: 200px;"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4 mt-4 text-center" id="button-grid">
+            <div class="col-3"><div class="button p-3">Agendar Cliente</div></div>
+            <div class="col-3"><div class="button p-3">Agenda</div></div>
+            <div class="col-3"><div class="button p-3">Recursos</div></div>
+            <div class="col-3"><div class="button p-3">Finanças</div></div>
+            <div class="col-3"><div class="button p-3">Estatísticas</div></div>
+            <div class="col-3"><div class="button p-3">Adicionar Produto</div></div>
+            <div class="col-3"><div class="button p-3">Adicionar Serviço</div></div>
+            <div class="col-3"><div class="button p-3">Perguntas</div></div>
+        </div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('attendanceChart').getContext('2d');
+        const attendanceChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Dia 1', 'Dia 2', 'Dia 3', 'Dia 4', 'Dia 5', 'Dia 6', 'Dia 7'],
+                datasets: [{
+                    label: 'Atendimentos',
+                    data: [3, 7, 5, 8, 6, 9, 4],
+                    backgroundColor: '#ddbbee'
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#444' }
+                    },
+                    x: { grid: { color: '#444' } }
+                },
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
