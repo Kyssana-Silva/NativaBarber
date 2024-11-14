@@ -1,3 +1,7 @@
+// ==========================================
+// PÁGINA DE REGISTRO
+// ==========================================
+
 // Função para salvar um novo usuário
 function saveUser(username, email, password) {
     const users = JSON.parse(localStorage.getItem('users')) || [];
@@ -10,7 +14,7 @@ function saveUser(username, email, password) {
 
 // Envio do formulário de registro
 document.getElementById('register-form')?.addEventListener('submit', function(e) {
-    e.preventDefault(); // Evita o envio padrão do formulário
+    e.preventDefault(); 
 
     const username = document.getElementById('register-login').value;
     const email = document.getElementById('register-email').value;

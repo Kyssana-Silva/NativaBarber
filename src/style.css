@@ -30,11 +30,19 @@ header{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding-left: 30px;
+}
+
+aside{
+    padding-left: 30px;
+}
+article{
+    align-items: center;
 }
 
 nav{
     display: inline;
-    align-items: center;
+    align-items: left;
     
 }
 .title{
@@ -125,7 +133,7 @@ footer {
     display: flex;
     justify-content: center;   
     align-items: center;       
-    position: fixed;           
+    position: relative;           
     bottom: 0;                 
     left: 0;
     width: 100%;               
@@ -133,6 +141,6 @@ footer {
     color: white;              
     padding: 10px 0;           
     font-size: 14px;           
-    text-align: center;        
+           
                   
 }
