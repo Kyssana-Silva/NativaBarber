@@ -1,0 +1,134 @@
+  /* Definindo variáveis de cores para facilitar a manutenção */
+  :root {
+    --primary-color: #7500D6;
+    --secondary-color: #986DD6;
+    --tertiary-color: #BAA9D6;
+    --dark-bg: #1a1a1a;
+    --light-bg: rgba(46, 30, 46, 0.9);
+    --button-color: #4c2d4c;
+    --button-hover-color: #a04aa0;
+    --modal-bg: rgba(0, 0, 0, 0.7);
+    --button-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --text-color: white;
+  }
+
+  /* Estilo geral do body com fundo e fontes */
+  body {
+    background-color: var(--dark-bg);
+    background-image: url('cranio-de-barbeiro-barbudo-e-bigode.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: overlay;
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+  }
+
+  /* Cabeçalho */
+  .header {
+    background-color: var(--light-bg);
+    padding: 10px;
+    color: var(--text-color);
+    font-size: 1.5em;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #brand-name {
+    color: #ddbbee;
+  }
+
+  /* Estilo dos cards */
+  .card-custom {
+    background-color: rgba(58, 40, 58, 0.9);
+    color: #ddbbee;
+    border-radius: 8px;
+    padding: 15px;
+  }
+
+  /* Botões customizados */
+  .button {
+    background-color: var(--button-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: var(--button-shadow);
+  }
+
+  .button:hover {
+    background-color: var(--button-hover-color);
+    transform: scale(1.05);
+  }
+
+  /* Botões no grid de ações */
+  #button-grid .button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    text-align: center;
+  }
+
+  /* Modal de agendamento */
+  #scheduleModal {
+    display: none; /* Inicia oculto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--modal-bg);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+
+  #scheduleModalContent {
+    background-color: #2e1e2e;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+
+  #closeModalBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+
+  /* Estilo para os inputs e formulário no modal */
+  #scheduleForm input, #scheduleForm button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+
+  /* Melhorando responsividade */
+  @media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-custom {
+        margin: 15px 0;
+    }
+  }
